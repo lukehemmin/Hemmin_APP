@@ -1,0 +1,253 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f9fafb;
+  --foreground: #18181b;
+  --card: #ffffff;
+  --card-foreground: #18181b;
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #f3f4f6;
+  --secondary-foreground: #18181b;
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
+  --accent: #f3f4f6;
+  --accent-foreground: #18181b;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #3b82f6;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: #09090b;
+  --foreground: #f9fafb;
+  --card: #18181b;
+  --card-foreground: #f9fafb;
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #27272a;
+  --secondary-foreground: #f9fafb;
+  --muted: #27272a;
+  --muted-foreground: #a1a1aa;
+  --accent: #27272a;
+  --accent-foreground: #f9fafb;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #27272a;
+  --input: #27272a;
+  --ring: #3b82f6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #09090b;
+    --foreground: #f9fafb;
+    --card: #18181b;
+    --card-foreground: #f9fafb;
+    --primary: #3b82f6;
+    --primary-foreground: #ffffff;
+    --secondary: #27272a;
+    --secondary-foreground: #f9fafb;
+    --muted: #27272a;
+    --muted-foreground: #a1a1aa;
+    --accent: #27272a;
+    --accent-foreground: #f9fafb;
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+    --border: #27272a;
+    --input: #27272a;
+    --ring: #3b82f6;
+  }
+}
+
+* {
+  border-color: var(--border);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/* 스크롤바 스타일링 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d4d4d8;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: #3f3f46;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a1a1aa;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: #52525b;
+}
+
+/* 코드 블록 스타일링 */
+pre {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  font-size: 0.875rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+code {
+  font-family: monospace;
+  font-size: 0.875rem;
+}
+
+/* 마크다운 스타일링 */
+.prose {
+  max-width: none;
+}
+
+.prose p {
+  margin-bottom: 1rem;
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+.prose h1, 
+.prose h2, 
+.prose h3, 
+.prose h4, 
+.prose h5, 
+.prose h6 {
+  font-weight: 600;
+  color: #18181b;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+}
+
+.dark .prose h1, 
+.dark .prose h2, 
+.dark .prose h3, 
+.dark .prose h4, 
+.dark .prose h5, 
+.dark .prose h6 {
+  color: #f4f4f5;
+}
+
+.prose h1 {
+  font-size: 1.5rem;
+}
+
+.prose h2 {
+  font-size: 1.25rem;
+}
+
+.prose h3 {
+  font-size: 1.125rem;
+}
+
+.prose ul, 
+.prose ol {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.prose ul {
+  list-style-type: disc;
+}
+
+.prose ol {
+  list-style-type: decimal;
+}
+
+.prose li {
+  margin-bottom: 0.25rem;
+}
+
+.prose a {
+  color: #3b82f6;
+}
+
+.prose a:hover {
+  text-decoration: underline;
+}
+
+.prose blockquote {
+  border-left-width: 4px;
+  border-left-color: #d4d4d8;
+  padding-left: 1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #52525b;
+  font-style: italic;
+}
+
+.dark .prose blockquote {
+  border-left-color: #3f3f46;
+  color: #a1a1aa;
+}
+
+.prose img {
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.prose table {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-collapse: collapse;
+}
+
+.prose table th, 
+.prose table td {
+  border: 1px solid #d4d4d8;
+  padding: 0.5rem;
+}
+
+.dark .prose table th, 
+.dark .prose table td {
+  border-color: #3f3f46;
+}
+
+.prose table th {
+  background-color: #f4f4f5;
+}
+
+.dark .prose table th {
+  background-color: #27272a;
+}
+
+/* 애니메이션 */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
